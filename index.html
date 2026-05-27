@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>AI Notes Summarizer</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>AI Notes Summarizer</h1>
+
+    <form method="POST">
+
+        <textarea
+            name="text"
+            placeholder="Paste notes here..."
+            required>{{ text }}</textarea>
+
+        <button type="submit">
+            Summarize Notes
+        </button>
+
+    </form>
+
+    {% if summary %}
+
+    <div class="summary-box">
+
+        <h2>Summary</h2>
+
+        <p>{{ summary }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
